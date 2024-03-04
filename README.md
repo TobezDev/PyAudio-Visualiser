@@ -5,16 +5,17 @@
 
 ### A simple package to do realtime audio analysis in native Python, using PyAudio and Numpy to extract and visualize FFT features from a live audio stream.
 
-[**Demo Video**](https://youtu.be/FnP2bkzU4oo)
-
-**The basic pipeline:**
-* Starts a stream_reader that pulls live audio data from any source using PyAudio (soundcard, microphone, ...)
-* Reads data from this stream many times per second (eg 1000 updates per second) and stores that data in a fifo buffer
-* When triggered by `.get_audio_features()`, the stream_analyzer, applies a Fast-Fourier-Transform to the most recent audio window in the buffer
-* When `visualize` is enabled, the visualizer displays these FFT features in realtime using a PyGame GUI (I made two display modes: 2D and 3D)
+### To install & use:
+- Install Python v3.10.13 from Python.org- you are not required to add the installation to PATH, however it may come in handy later.
+- Download this code using the button in the upper right: "Downlaod as ZIP"
+- Locate the directory you downloaded the ZIP file to, and extract it to a new folder.
+- Open your device's terminal, and change your root directory to the project folder you just made.
+  - In Windows, right click the folder and select the "Copy as path" option.
+  - Open a terminal window, and enter `cd "<path>" `. To fill in your path, hit Right Click.
+- In the same terminal window, run ` python3 -m pip install -r requirements.txt `
+- Wait for the requirements to complete their installation, then run the program using ` python3 -u run_FFT_analyzer.py `
 
 **Requirements:**
-
 ` pip install -r requirements.txt `
 
 You also might have to 
@@ -28,7 +29,7 @@ If something doesn't work, please first try to fix it yourself and post an issue
 
 Tested with:
 * Python 3.6.3
-* [pygame](https://www.pygame.org/wiki/GettingStarted)  --> Version: 1.9.6 & 
+* [pygame](https://www.pygame.org/wiki/GettingStarted)  --> Version: 1.9.6
 * [pyaudio](http://people.csail.mit.edu/hubert/pyaudio/) --> Version: 0.2.11
 * [scipy](https://www.scipy.org/install.html)   --> Version: 1.4.1
 
@@ -37,12 +38,6 @@ Alternatively to pyaudio, you can use [sounddevice](https://python-sounddevice.r
 * just run ` python3 -m pip install sounddevice `
 * Tested on Ubuntu 18.04 with sounddevice version 0.3.15
 * The code to switch between the two sound interfaces is in the ` __init__ ` function of the Stream_Analyzer class
-
-**Usage:**
-
-just run `python run_FFT_analyzer.py` and play a sound on your machine!
-* I have personally learned **A LOT** about sound by watching [this realtime visualization](https://www.youtube.com/watch?v=FnP2bkzU4oo) while listening to music
-* You can run the stream_analyzer in headless mode and use the FFT features in any Python Application that requires live musical features
 
 ![Teaser image](./assets/usage.png)
 
