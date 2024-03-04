@@ -15,7 +15,7 @@
 
 **Requirements:**
 
-`pip install -r requirements.txt`
+` pip install -r requirements.txt `
 
 You also might have to 
 `sudo apt install libasound-dev portaudio19-dev libportaudio2 libportaudiocpp0` (tested on Ubuntu)
@@ -34,9 +34,9 @@ Tested with:
 
 
 Alternatively to pyaudio, you can use [sounddevice](https://python-sounddevice.readthedocs.io/en/0.3.15/installation.html) which might be more compatible with Windows/Mac
-* just run `python3 -m pip install sounddevice`
+* just run ` python3 -m pip install sounddevice `
 * Tested on Ubuntu 18.04 with sounddevice version 0.3.15
-* The code to switch between the two sound interfaces is in the `__init__` function of the Stream_Analyzer class
+* The code to switch between the two sound interfaces is in the ` __init__ ` function of the Stream_Analyzer class
 
 **Usage:**
 
@@ -50,4 +50,4 @@ just run `python run_FFT_analyzer.py` and play a sound on your machine!
 * Implement realtime beat detection / melody extraction on top of FFT features (eg using Harmonic/Percussive decomposition)
 * The pygame.transform operations sometimes cause weird visual artifacts (boxes) for some resolution settings --> fix??
 * Remove the matplotlib dependency since it's only needed for the colormap of the vis..
-* Slow bars decay speed currently depends on how often `.get_audio_features()` is called --> fix
+* Slow bars decay speed currently depends on how often ` .get_audio_features() ` is called --> fix
