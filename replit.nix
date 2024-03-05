@@ -1,5 +1,8 @@
 {pkgs}: {
   deps = [
+    pkgs.fetchutils
+    pkgs.zip
+    pkgs.python-launcher
 	pkgs.portmidi
 	pkgs.libpng
 	pkgs.libjpeg
