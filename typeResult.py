@@ -108,9 +108,12 @@ Literal[b"\xff\xff\xff\x0bpaWinWasapiUseChannelMask"], Literal[4]]
 " cannot be assigned to parameter "_globals" of type "tuple[str | int, ...]" in function "__init__" ?
 """
 
-def main():
-	p = ap.ArgumentParser()
-	p.parse_args(arg)
 
-if __name__ in ['typeresult', 'main']:
-	main()
+def main(a):
+    p = ap.ArgumentParser()
+    r = p.parse_args(a)
+    return r if type(r) == str else TypeError("Value `r` is not type str.")
+
+
+m = main(arg)
+print(m)
